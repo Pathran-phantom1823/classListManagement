@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="process.js"></script>
+	  <style type="text/css">
+    table{
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px;
+    }
+    table th, table td{
+        padding: 5px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<button type="button" id="createStudent" class="btn btn-primary">Create Student</button>
+			<table id="table">
+				<thead>
+					<tr>
+						<th class="id">ID</th>
+						<th>Name</th>
+						<th>Coarse & Year</th>
+				
+						<th style="display: none">Address</th>
+						<th style="display: none">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>John Patrick</td>
+						<td>CCT-2</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+	<div id="form" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="container">
+					<div class="jumbotron">
+						<center><h1>Fill-Up Form </h1></center><br>
+						<center><form action="index.html">
+							<label for="id">ID</label><br>
+							<input type="text" id="id" name="id" name="id"><br><br>
+							<label for="fname">Full Name</label><br>
+							<input type="text" id="fname" name="fname" placeholder="Please Enter Your Full Name"><br><br>
+							<label for="cy">Coarse and Year</label><br>
+							<input type="text" id="cy" name="cy" placeholder="Coarse and Year"><br><br>
+							<label for="address">Home Address</label><br>
+							<input type="text" id="address" name="address" placeholder="Address"><br><br>
+							<label for="email">Email Address</label><br>
+							<input type="email" id="email" name="email" placeholder="Email">
+						</form><br><br>
+							<div class="row">
+								<div class="col-sm">
+									<button type="button" class="btn btn-outline-primary" id="save">Save</button>
+								</div>
+								<div class="col-sm">
+									<button type="button" class="btn btn-outline-danger" id = 'cancel'>Cancel</button>
+								</div>
+							</div>
+							<div id="storage"></div>
+					</center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>
