@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -33,33 +34,32 @@
 					<tr>
 						<th class="id">ID</th>
 						<th>Name</th>
-						<th>Coarse & Year</th>
+						<th>Course & Year</th>
 				
 						<th style="display: none">Address</th>
 						<th style="display: none">Email</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td>John Patrick</td>
-						<td>CCT-2</td>
-					</tr>
 				</tbody>
 			</table>
 			</div>
 		</div>
 	</div>
+	<div class="card">
+		<div class="card-block">
 	<div id="form" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="container">
 					<div class="jumbotron">
-						<center><h1>Fill-Up Form </h1></center><br>
+						<center><div class="form-header blue-gradient">
+            			<h3><i class="fa fa-user-add"></i> Register:</h3>
+        		</div></center><br>
 						<center><form action="index.html">
-							<label for="id">ID</label><br>
+							<label for="id"><i class="fas fa-id-card"></i>&nbsp;&nbsp;ID</label><br>
 							<input type="text" id="id" name="id" name="id"><br><br>
-							<label for="fname">Full Name</label><br>
+							<label for="fname"><i class="fas fa-user"></i>&nbsp;&nbsp;Full Name</label><br>
 							<input type="text" id="fname" name="fname" placeholder="Please Enter Your Full Name"><br><br>
 							<label for="cy">Coarse and Year</label><br>
 							<input type="text" id="cy" name="cy" placeholder="Coarse and Year"><br><br>
