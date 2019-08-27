@@ -31,8 +31,8 @@ $(document).ready(function(){
 					console.log('not update')
 					$("table tbody").append(newData)
 					} else {
-					$(newData).attr("counter", ($('#' + curr_row).attr("counter")))
-					$('#' + curr_row).html($(newData).html())
+					$(newData).attr("counter", ($('' + curr_row).attr("counter")))
+					$('' + curr_row).html($(newData).html())
 					}
 
 		$('#id').val($('td.id').last().text());
@@ -57,9 +57,6 @@ $(document).ready(function(){
 				curr_row = $(this).closest("tr").attr("id");
 				$('#form').modal('hide');
 		})
-
-				
-
 
 	});
 
