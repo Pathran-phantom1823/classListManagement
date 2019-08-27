@@ -57,9 +57,6 @@ $(document).ready(function(){
 					$(this).parents().find('td').css('background-color', '');
 					$('.Actionbutton').hide();
 			});
-		// $('td').live('mousenter', function(){
-
-		// })
 	});
 
 
