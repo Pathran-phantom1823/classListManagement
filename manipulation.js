@@ -5,11 +5,6 @@ $(document).ready(function(){
 		console.log("clcik")
 		$('#form').modal();
 		$('input').val(null);
-		// $('#Uid').val('');
-		// $('#fname').val('');
-		// $('#cy').val('');
-		// $('#address').val('');
-		// $('#email').val('');
 	})
 
 	var counter = 0; 
@@ -43,7 +38,7 @@ $(document).ready(function(){
 			curr_row = null;	
 		}
 		else{
-			// counter += 1;
+			
 			$('table tbody').append(newData);
 		}
 
