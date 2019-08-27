@@ -4,11 +4,12 @@ $(document).ready(function(){
 	$('#createStudent').on('click', function(){
 		console.log("clcik")
 		$('#form').modal();
-		$('#id').val('');
-		$('#fname').val('');
-		$('#cy').val('');
-		$('#address').val('');
-		$('#email').val('');
+		$('input').val(null);
+		// $('#Uid').val('');
+		// $('#fname').val('');
+		// $('#cy').val('');
+		// $('#address').val('');
+		// $('#email').val('');
 	})
 
 	var counter = 0; 
@@ -16,24 +17,36 @@ $(document).ready(function(){
 	var update = false;
 
 	$('#save').on('click', function(){
-		var id  = $('#id').val();
+		var id  = $('#Uid').val();
 		var name = $('#fname').val();
 		var cy = $('#cy').val();
-		var newData = "<tr id ='row' "+ (counter++) + "class = 'info'>"
-					+"<td class= 'id' id= 'id'>"+counter+"</td>"
+		var address = $('#address').val();
+		var email = $('#email').val();
+		counter ++;
+		var tmp_counter = counter;
+		if(curr_row){
+		tmp_counter= $('#Uid').val();
+		}	
+		var newData = "<tr id ='row' "+ tmp_counter + "class = 'info'>"
+					+"<td class= 'id' id= 'id'>"+tmp_counter+"</td>"
 					+"<td class= 'name'>"+name+"</td>"
 					+"<td class= 'cy'>"+cy+"</td>"
+					+"<td class= 'address' style='display:none;'>"+address+"</td>"
+					+"<td class= 'email'  style='display:none;'>"+email+"</td>"
 					+"<td class= 'Actionbutton'  style='display:none;'><button id='edit' type= 'button' class='btn btn-primary'>"
 					+"Edit</button><button id='delete' type= 'button' class='btn btn-danger'>"
 					+"Delete</button></tr>";
 
-		if(!update){
-					console.log('not update')
-					$("table tbody").append(newData)
-					} else {
-					$(newData).attr("counter", ($('' + curr_row).attr("counter")))
-					$('' + curr_row).html($(newData).html())
-					}
+		if(curr_row){
+			console.log(counter-=1);
+			$('table tbody').find(curr_row).replaceWith(newData);
+			curr_row = null;	
+		}
+		else{
+			// counter += 1;
+			$('table tbody').append(newData);
+		}
+
 
 		$('#id').val($('td.id').last().text());
 		$('#name').val('');
@@ -49,15 +62,9 @@ $(document).ready(function(){
 					$(this).parents().find('td').css('background-color', '');
 					$('.Actionbutton').hide();
 			});
+		// $('td').live('mousenter', function(){
 
-		$('#edit').on('click',function(){
-				console.log('update')
-				--counter;
-				update = true;
-				curr_row = $(this).closest("tr").attr("id");
-				$('#form').modal('hide');
-		})
-
+		// })
 	});
 
 
@@ -69,12 +76,15 @@ $(document).ready(function(){
 	$('body').on('click', '#edit', function(){
 		$('#form').modal();
 		curr_row = $(this).parents('tr');
-		$('#id').val($(this).closest('tr').find('td.id').text());
-		$('#name').val($(this).closest('tr').find('td.name').text());
+		$('#Uid').val($(this).closest('tr').find('td.id').text());
+		$('#fname').val($(this).closest('tr').find('td.name').text());
 		$('#cy').val($(this).closest('tr').find('td.cy').text());
+		$('#address').val($(this).closest('tr').find('td.address').text());
+		$('#email').val($(this).closest('tr').find('td.email').text());
 	});
 
 	$('#cancel').on('click', function(){
+		$('input').val(null);
 		$('#form').modal('hide');
 	})
 
